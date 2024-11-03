@@ -6,6 +6,7 @@ class Options {
 
     protected $default_options = [
         'require_auth' => true,
+		'collect_stats' => false,
     ];
     
     protected $network_options = [];

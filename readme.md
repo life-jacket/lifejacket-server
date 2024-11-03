@@ -23,6 +23,8 @@ Configuration for this plugin is currently done via constants in the `wp-config.
 // ===== Optional
 // To enable authentication via application passwords (defaults to `true`)
 define( 'LIFEJACKET_SERVER_REQUIRE_AUTH', true );
+// To enable collection of usage statistics (defaults to `false`)
+define( 'LIFEJACKET_SERVER_COLLECT_STATS', true );
 ```
 
 Note: If you decide to require the application password authentication, you will need to generate an application password for an existing user on your WP site, and then configure your Clients to use that password.

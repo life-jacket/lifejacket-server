@@ -35,8 +35,10 @@ class Plugin {
 			$this->rest['Downloads']->enable_authentication();
 		}
 
-		$this->stats = new Stats();
-		$this->stats->init();
+		if ( $this->options->get( 'collect_stats' ) ) {
+			$this->stats = new Stats();
+			$this->stats->init();
+		}
     }
 
 }
