@@ -22,8 +22,11 @@ class ComposerStaticInit0cc0f737e4938dbcf266384ce91cffaa
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'LifeJacket\\Server\\Options' => __DIR__ . '/../..' . '/includes/Options.php',
         'LifeJacket\\Server\\Plugin' => __DIR__ . '/../..' . '/includes/Plugin.php',
-        'LifeJacket\\Server\\REST' => __DIR__ . '/../..' . '/includes/REST.php',
+        'LifeJacket\\Server\\REST\\API' => __DIR__ . '/../..' . '/includes/REST/API.php',
+        'LifeJacket\\Server\\REST\\Base' => __DIR__ . '/../..' . '/includes/REST/Base.php',
+        'LifeJacket\\Server\\REST\\Downloads' => __DIR__ . '/../..' . '/includes/REST/Downloads.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

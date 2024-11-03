@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'LifeJacket\\Server\\Options' => $baseDir . '/includes/Options.php',
     'LifeJacket\\Server\\Plugin' => $baseDir . '/includes/Plugin.php',
-    'LifeJacket\\Server\\REST' => $baseDir . '/includes/REST.php',
+    'LifeJacket\\Server\\REST\\API' => $baseDir . '/includes/REST/API.php',
+    'LifeJacket\\Server\\REST\\Base' => $baseDir . '/includes/REST/Base.php',
+    'LifeJacket\\Server\\REST\\Downloads' => $baseDir . '/includes/REST/Downloads.php',
 );

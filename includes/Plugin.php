@@ -18,17 +18,21 @@ class Plugin {
 
     private function __construct() {}
 
+    protected $options;
     protected $rest = [];
 
     public function init() {
-        // $this->rest['Plugin'] = new REST\Plugin();
-        // $this->rest['Plugin']->init();
-        $this->rest['API'] = new REST\API();
+        $this->options = new Options();
+
+		$this->rest['API'] = new REST\API();
         $this->rest['API']->init();
-        $this->rest['API']->enable_authentication();
         $this->rest['Downloads'] = new REST\Downloads();
         $this->rest['Downloads']->init();
-        $this->rest['Downloads']->enable_authentication();
+
+		if ( $this->options->get( 'require_auth' ) ) {
+			$this->rest['API']->enable_authentication();
+			$this->rest['Downloads']->enable_authentication();
+		}
     }
 
 }
