@@ -20,6 +20,7 @@ class Plugin {
 
     protected $options;
     protected $rest = [];
+	public $stats;
 
     public function init() {
         $this->options = new Options();
@@ -33,6 +34,9 @@ class Plugin {
 			$this->rest['API']->enable_authentication();
 			$this->rest['Downloads']->enable_authentication();
 		}
+
+		$this->stats = new Stats();
+		$this->stats->init();
     }
 
 }

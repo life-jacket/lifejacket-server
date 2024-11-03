@@ -71,7 +71,7 @@ abstract class Base {
     }
 
     public function plugin_callback( $request ) {
-        trigger_error( json_encode( $request->get_params() ) );
+		$this->increment_stats( $request );
 
         $url_params = $request->get_url_params();
         $query_params = $request->get_query_params();
@@ -94,6 +94,21 @@ abstract class Base {
 
         return $response;
     }
+
+	public function increment_stats( $request ) {
+		if ( ! \LifeJacket\Server\Plugin::get_instance()->stats ) {
+			return;
+		}
+
+
+		$header = $request->get_header( 'user_agent' );
+		$header = explode( ';', $header )[1] ?? '- n/a -';
+		$domain = trim( $header );
+		$url = $request->get_url_params();
+		$endpoint = $this->url . ( $url['call'] ?? '/');
+
+		\LifeJacket\Server\Plugin::get_instance()->stats->log( $domain, $endpoint );
+	}
 
     public function permission_callback( $request ) {
         if ( $this->is_authentication_enabled() ) {
