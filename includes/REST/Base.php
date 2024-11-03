@@ -8,6 +8,8 @@ abstract class Base {
     protected $methods = 'GET';
     protected $use_authentication = false;
 
+	protected $url;
+
     public function __construct() {
         $this->args = [
             'methods' => $this->get_methods(),
@@ -68,7 +70,30 @@ abstract class Base {
         return $this->use_authentication;
     }
 
-    abstract public function plugin_callback( $request );
+    public function plugin_callback( $request ) {
+        trigger_error( json_encode( $request->get_params() ) );
+
+        $url_params = $request->get_url_params();
+        $query_params = $request->get_query_params();
+        $post_params = $request->get_body_params();
+
+        $url = $this->url;
+        $url .= stripslashes_deep( $url_params['call'] );
+        $url = add_query_arg( $query_params, $url );
+
+        $args = [
+            'method' => $request->get_method(),
+        ];
+        if ( $post_params ) {
+            $args['body'] = $post_params;
+        }
+        $remote_response = wp_remote_request( $url, $args );
+        $data = wp_remote_retrieve_body( $remote_response );
+
+		$response = $this->prepare_response( $data, $request );
+
+        return $response;
+    }
 
     public function permission_callback( $request ) {
         if ( $this->is_authentication_enabled() ) {
@@ -89,5 +114,7 @@ abstract class Base {
     
         return true;
     }
+
+	abstract protected function prepare_response( $data, $request );
 
 }
