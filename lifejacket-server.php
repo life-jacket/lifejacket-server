@@ -2,6 +2,12 @@
 /**
  * Plugin Name: LifeJacket Server
  * Version: 0.1.0
+ * Plugin URI: https://github.com/life-jacket/lifejacket-server
+ * Description: A custom update server in your WordPress site. Part of LifeJacket project.
+ * Author: LifeJacket
+ * Author URI: https://github.com/life-jacket
+ * License: GPLv2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
