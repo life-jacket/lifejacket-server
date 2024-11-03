@@ -1,0 +1,10 @@
+{
+    "name": "lifejacket/server",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "LifeJacket\\Server\\": "includes/"
+        }
+    },
+    "require": {}
+}
