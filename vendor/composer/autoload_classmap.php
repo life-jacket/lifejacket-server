@@ -12,4 +12,5 @@ return array(
     'LifeJacket\\Server\\REST\\API' => $baseDir . '/includes/REST/API.php',
     'LifeJacket\\Server\\REST\\Base' => $baseDir . '/includes/REST/Base.php',
     'LifeJacket\\Server\\REST\\Downloads' => $baseDir . '/includes/REST/Downloads.php',
+    'LifeJacket\\Server\\Stats' => $baseDir . '/includes/Stats.php',
 );

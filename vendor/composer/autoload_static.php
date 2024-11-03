@@ -27,6 +27,7 @@ class ComposerStaticInit0cc0f737e4938dbcf266384ce91cffaa
         'LifeJacket\\Server\\REST\\API' => __DIR__ . '/../..' . '/includes/REST/API.php',
         'LifeJacket\\Server\\REST\\Base' => __DIR__ . '/../..' . '/includes/REST/Base.php',
         'LifeJacket\\Server\\REST\\Downloads' => __DIR__ . '/../..' . '/includes/REST/Downloads.php',
+        'LifeJacket\\Server\\Stats' => __DIR__ . '/../..' . '/includes/Stats.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
