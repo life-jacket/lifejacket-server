@@ -36,3 +36,13 @@ Note: If you decide to require the application password authentication, you will
 By default collection of usage stats is disabled. If you enable it via configuration (see above), a shortcode `[lifejacket_stats /]` becomes available to show top usage of the server by domain and by endpoint.
 
 Stats are currently very rudimentary and the module is very experimental
+
+## Changelog
+
+### v0.2.0
+
+- cleanup according to coding standards
+
+### v0.1.0
+
+Initial release

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: LifeJacket Server
- * Version: 0.1.0
+ * Version: 0.2.0
  * Plugin URI: https://github.com/life-jacket/lifejacket-server
  * Description: A custom update server in your WordPress site. Part of LifeJacket project.
  * Author: LifeJacket
