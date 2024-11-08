@@ -14,6 +14,11 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 add_action( 'plugins_loaded', 'lifejacket_server' );
 
-function lifejacket_server() {
-    return LifeJacket\Server\Plugin::get_instance();
+/**
+ * Plugin initalization
+ *
+ * @return LifeJacket\Server\Plugin
+ */
+function lifejacket_server(): LifeJacket\Server\Plugin {
+	return LifeJacket\Server\Plugin::get_instance();
 }
