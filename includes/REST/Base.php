@@ -89,7 +89,11 @@ abstract class Base {
 			$args['body'] = $post_params;
 		}
 		$remote_response = wp_remote_request( $url, $args );
-		$data            = wp_remote_retrieve_body( $remote_response );
+		$response_code   = wp_remote_retrieve_response_code( $remote_response );
+		if ( $response_code !== 200 ) {
+			trigger_error( var_export( $remote_response, true ) );
+		}
+		$data = wp_remote_retrieve_body( $remote_response );
 
 		$response = $this->prepare_response( $data, $request );
 
