@@ -82,7 +82,8 @@ abstract class Base {
 		$url  = add_query_arg( $query_params, $url );
 
 		$args = [
-			'method' => $request->get_method(),
+			'method'  => $request->get_method(),
+			'timeout' => 300,
 		];
 		if ( $post_params ) {
 			$args['body'] = $post_params;
