@@ -18,12 +18,17 @@ class Plugin {
 
 	private function __construct() {}
 
-	protected $options;
+	public $options;
+	protected $settings;
+
 	protected $rest = [];
 	public $stats;
 
 	public function init() {
 		$this->options = new Options();
+
+		$this->settings = new Settings();
+		$this->settings->init();
 
 		$this->rest['API'] = new REST\API();
 		$this->rest['API']->init();
