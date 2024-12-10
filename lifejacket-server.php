@@ -12,6 +12,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+define( 'LIFEJACKET_SERVER_PLUGIN_PATH', __DIR__ );
+define( 'LIFEJACKET_SERVER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
 add_action( 'plugins_loaded', 'lifejacket_server' );
 
 /**
