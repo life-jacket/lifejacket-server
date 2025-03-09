@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+    - main
+    - release/*
+jobs:
+  my_job:
+    name: deploy to public.getlifejacket.org
+    uses: ideag/atomic-deploys-action@v0.1.0
+    with:
+      host: ${{ inputs.host }}
+      username: ${{ secrets.user }}
+      key: ${{ secrets.key }}
+      ## port: ${{ inputs.port }}
+      port: 22
+      dir: /home/master/applications/dfbhjjumxe/public_html/wp-content
