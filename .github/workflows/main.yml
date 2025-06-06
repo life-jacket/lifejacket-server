@@ -4,13 +4,13 @@ on:
     - main
     - release/*
 jobs:
-  my_job:
-    name: deploy to public.getlifejacket.org
-    uses: ideag/atomic-deploys-action/.github/workflows/atomic.yml@v0.1.0
+  call-workflow-passing-data:
+    uses: ideag/atomic-deploys-action/.github/workflows/atomic.yml@main
     with:
       host: ${{ inputs.host }}
-      username: ${{ secrets.user }}
-      key: ${{ secrets.key }}
       ## port: ${{ inputs.port }}
       port: 22
       dir: /home/master/applications/dfbhjjumxe/public_html/wp-content
+    secrets:
+      username: ${{ secrets.user }}
+      key: ${{ secrets.key }}
