@@ -10,7 +10,7 @@ jobs:
       host: ${{ inputs.host }}
       ## port: ${{ inputs.port }}
       port: 22
-      dir: /home/master/applications/dfbhjjumxe/public_html/wp-content
+      dir: /home/master/applications/dfbhjjumxe/public_html/wp-content/lifejacket-server
     secrets:
       username: ${{ secrets.user }}
       key: ${{ secrets.key }}
