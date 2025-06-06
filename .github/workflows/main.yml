@@ -8,10 +8,10 @@ jobs:
   call-workflow-passing-data:
     uses: ideag/atomic-deploys-action/.github/workflows/atomic.yml@main
     with:
-      host: ${{ inputs.host }}
+      host: ${{ inputs.HOST }}
       ## port: ${{ inputs.port }}
       port: 22
       dir: /home/master/applications/dfbhjjumxe/public_html/wp-content/lifejacket-server
     secrets:
-      username: ${{ secrets.user }}
-      key: ${{ secrets.key }}
+      username: ${{ secrets.USER }}
+      key: ${{ secrets.KEY }}
